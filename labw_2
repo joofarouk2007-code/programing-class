@@ -1,0 +1,49 @@
+%% NAME; YOUSSIF MOHAMMED FAROUK BASTAWISY 
+%% GROUP; EDIFU25/1
+
+%% Part 1: Vectors
+a = (-pi/2 : 0.5 : 3*pi)';
+b = a.^2;
+c = sin(a + b);
+disp(c')
+
+%% Part 2: Matrices
+Z = rand(3,3);
+Z(2,:) = [];
+Z = Z';
+disp(Z)
+
+%% Part 3: Signal + noise
+A = 4;
+f = 3;
+sigma = 1;
+U1 = 2.5;
+U2 = 1.5;
+
+t = 0:0.002:1.5;
+s = A*sin(2*pi*f*t);
+n = sigma*randn(size(t));
+x = s + n;
+
+above_U1 = x(abs(x) > U1);
+
+filtered = x;
+filtered(abs(filtered) < U2) = 0;
+
+n_total = length(x);
+n_selected = length(above_U1);
+min_val = min(filtered);
+max_val = max(filtered);
+
+disp(n_total)
+disp(n_selected)
+disp(min_val)
+disp(max_val)
+
+%% Complementary Task P1: Indexing of vector elements
+A = input('Enter vector A (10 elements): ');
+
+B = [A(end:-1:6), A(1:5)];
+
+disp('vector B is:')
+disp(B)
