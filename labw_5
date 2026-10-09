@@ -1,0 +1,52 @@
+%% Task 1
+student(1).name    = 'Youssif';
+student(1).surname = 'Farouk';
+student(1).group   = 'EDIFU25/1';
+student(1).exams   = [10 10 10; 10 10 10];
+
+%% Task 1
+student(2).name    = 'Ahmed';
+student(2).surname = 'Hassan';
+student(2).group   = 'EDIFU25/1';
+student(2).exams   = [9 8 10; 9 9 10];
+
+student(3).name    = 'Omar';
+student(3).surname = 'Ali';
+student(3).group   = 'EDIFU25/1';
+student(3).exams   = [8 9 9; 10 8 9];
+
+%% Task 1
+disp('Omar exam marks before:')
+disp(student(3).exams)
+
+student(3).exams(1,2) = 10;
+
+disp('Omar exam marks after:')
+disp(student(3).exams)
+
+%% Task 2: 
+rates = [0.10 0.15 0.20];    
+
+format bank                   
+
+disp('Loan size      Bank 1 (10%)   Bank 2 (15%)   Bank 3 (20%)')
+for loan = 10000:1000:20000
+    disp([loan, loan*rates])
+end
+
+format short                 
+%% Complementary task:
+x = input('Enter x (number of rows): ');
+y = input('Enter y (number of columns): ');
+
+for k = 1:20
+    m = floor(x*rand) + 1;    
+    n = floor(y*rand) + 1;    
+
+    A = zeros(x, y);          
+    A(m, n) = NaN;            
+
+    disp(A)                  
+    pause(1)                  
+    clc                       
+end
